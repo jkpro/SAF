@@ -1,3 +1,3 @@
 # Swishes and farts
 
-petprojects and experements 
+petprojects and experiments 
