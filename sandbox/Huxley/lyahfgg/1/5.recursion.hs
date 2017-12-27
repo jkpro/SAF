@@ -25,8 +25,22 @@ module Main where
                     | count <= 0 = error "Wrong count argument"
                     | count == 1 = [x]
                     | otherwise = x : takeus (count - 1) xs
+    
+
+    quickSort :: (Ord a) => [a] -> [a]
+    quickSort [] = []
+    quickSort (x:xs) = 
+        let smaller = quickSort [a | a <- xs, a < x]
+            bigger = quickSort [a | a <- xs, a >= x]
+        in smaller ++ [x] ++ bigger
+
 
     
+
+
+
+
     -- main = print ( maximus [1,2,4,111, 2, 1] )
     -- main = print ( replicatus 2 23 );
-    main = print ( takeus 4 [1,2,4,111, 2, 1] )
+    -- main = print ( takeus 4 [1,2,4,111, 2, 1] )
+    main = print ( quickSort [1,2,4,111, 2, 1] )
